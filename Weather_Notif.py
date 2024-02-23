@@ -23,7 +23,7 @@ no = 0 # Counter so that we can match location name with id from two lists
 
 for i in name: # Checks that the user input matches a name in the locations list
     no = no +1 
-    if i == userInput:
+    if i.upper() == userInput.upper():
         print (i)
         break
 
@@ -41,6 +41,9 @@ t = ([sub["T"] for sub in data]) # Extracts all temp values and stores in list
 p = ([sub["Pp"] for sub in data]) # Extracts all precip values and stores in list
 
 #print (response_API.status_code)
+
+print (t)
+print (p)
 
 result = "Current Temp = " + t[3] + "°C\n" + "Chance of Rain = " + p[3] + "%" + " in " + userInput # Puts all releveant information into string to be passed into notification
 
