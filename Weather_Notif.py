@@ -10,33 +10,29 @@ n = ToastNotifier()
 
 userInput = input("Enter your location: ")
 
-response_API = requests.get("http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/datatype/6620/xml/3840?res=3hourly&key=60071ca7-b9e5-4686-92bc-4d405064b6ca")
-
 sitelist = requests.get("http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/sitelist?key=60071ca7-b9e5-4686-92bc-4d405064b6ca")
 
 list = sitelist.json()
-
-#for i in list:
-   # for j in i:
-       # if j == "name":
-           #print (x)
-            
-#print (list)
-
+       
 locations = (list["Locations"] ["Location"])
-#print (locations)
 
 name = ([sub["name"] for sub in locations])
+  
+id = ([sub["id"] for sub in locations])
 
-#if userInput == name:
-    
-id = ([sub["name"] for sub in locations])
+no = 0
 
-print (id)
+for i in name:
+    no = no +1
+    if i == userInput:
+        print (i)
+        break
 
-#for i in locations:
-    #for j in i:
-        #print (j)
+locationID = id[no-1]
+
+response_API = requests.get("http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/xml/" + locationID + "?res=3hourly&key=60071ca7-b9e5-4686-92bc-4d405064b6ca")
+
+print(locationID)
 
 print (response_API.status_code)
 
