@@ -1,0 +1,5 @@
+- Error handling
+- Add Gui
+- Not accept places not in list
+- Investigate: WNDPROC return value cannot be converted to LRESULT
+TypeError: WPARAM is simple, so must be an int object (got NoneType)
