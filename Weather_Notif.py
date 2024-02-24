@@ -6,9 +6,10 @@ import os
 
 load_dotenv()
 
-n = ToastNotifier()
+#n = ToastNotifier()
 
-def getWeather (city):
+
+def getWeather (city = "Liverpool"):
     lat = None
     lon = None
 
@@ -37,13 +38,13 @@ def getWeather (city):
 
 if __name__ == "__main__":
     
-    userInput = input("Enter your location: ")
+    city = input("Enter your location: ")
 
-    data = getWeather(userInput)
+    data = getWeather(city)
 
-    currentTemp = (data["current"]["temp"]) # Extracts current temp from json
+    #currentTemp = (data["current"]["temp"]) # Extracts current temp from json
 
-    condition = (data["current"]["weather"][0]["description"]) # Extracts current condtion from json
+    #condition = (data["current"]["weather"][0]["description"]) # Extracts current condtion from json
 
 #result = "Current Temp = " + str(currentTemp) + "°C\n" + "Condition = " + condition.title() # Puts all releveant information into string to be passed into notification
 
