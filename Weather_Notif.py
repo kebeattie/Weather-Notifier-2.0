@@ -1,6 +1,5 @@
 import requests
 import json
-import re
 from win10toast import ToastNotifier
 
 n = ToastNotifier()
@@ -31,6 +30,6 @@ condition = (weatherData["current"]["weather"][0]["description"]) # Extracts cur
 print (condition)
 
 
-result = "Current Temp = " + str(currentTemp) + "°C\n" + "Condition = " + condition + " in " + userInput.title() # Puts all releveant information into string to be passed into notification
+result = "Current Temp = " + str(currentTemp) + "°C\n" + "Condition = " + condition.title() # Puts all releveant information into string to be passed into notification
 
-n.show_toast("Live Weather Update", result, duration = 10) # Sends notification
+n.show_toast(userInput.title() + " Current Weather", result, duration = 10) # Sends notification
