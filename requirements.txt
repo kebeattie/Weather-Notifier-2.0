@@ -1,0 +1,9 @@
+certifi==2024.2.2
+charset-normalizer==3.3.2
+idna==3.6
+pypiwin32==223
+python-dotenv==1.0.1
+pywin32==306
+requests==2.31.0
+urllib3==2.2.1
+win10toast==0.9
