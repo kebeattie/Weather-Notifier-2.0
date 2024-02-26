@@ -24,8 +24,7 @@ def getWeather (city = "Liverpool"):
          print ("\nLocation not found\n")
             
 
-    response_API = requests.get("https://api.openweathermap.org/data/3.0/onecall?lat=" + lat +"&lon=" + lon +"&units=metric&exclude=minutely,hourly,daily,alerts&appid="+os.getenv("API_KEY")) # Requests weather data for user specified location
-    #status = sitelist.status_code
+    response_API = requests.get("https://api.openweathermap.org/data/3.0/onecall?lat=" + lat +"&lon=" + lon +"&units=metric&exclude=minutely,hourly,daily,alerts&appid="+os.getenv("API_KEY")) # Requests weather data for 
         
     weatherData = response_API.json() # Puts data from API call into json object
     
