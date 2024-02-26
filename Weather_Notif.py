@@ -1,12 +1,9 @@
 import requests
 import json
-from win10toast import ToastNotifier
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
-
-#n = ToastNotifier()
 
 def getWeather (city = "Liverpool"):
     lat = None
@@ -36,13 +33,3 @@ if __name__ == "__main__":
     city = input("Enter your location: ")
 
     data = getWeather(city)
-    
-    
-
-    #currentTemp = (data["current"]["temp"]) # Extracts current temp from json
-
-    #condition = (data["current"]["weather"][0]["description"]) # Extracts current condtion from json
-
-#result = "Current Temp = " + str(currentTemp) + "°C\n" + "Condition = " + condition.title() # Puts all releveant information into string to be passed into notification
-
-#n.show_toast(userInput.title() + " Current Weather", result, duration = 10) # Sends notification
