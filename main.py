@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from Weather_Notif import *
+from getWeather_script import *
 from waitress import serve
 app = Flask(__name__)
 

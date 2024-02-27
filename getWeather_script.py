@@ -33,3 +33,5 @@ if __name__ == "__main__":
     city = input("Enter your location: ")
 
     data = getWeather(city)
+    
+    print (data)
