@@ -25,6 +25,8 @@ def weather():
         title = city,
         cond = (weather_data["current"]["weather"][0]["description"]),
         temp = (weather_data["current"]["temp"]),
+        speed = (weather_data["current"]["wind_speed"]),
+        feels = (weather_data["current"]["feels_like"]),
 
         )
     except:
